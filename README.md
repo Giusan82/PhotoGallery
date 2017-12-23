@@ -13,8 +13,8 @@ allows only 50 requests per hour.</li>
 <li>An advanced search to filter the results with Order By, Max Results and so 
 on.</li>
 <li>The image are displayed using the Image Loader Library <a href="https://github.com/bumptech/glide">Glide</a>, which it handles image loading/caching.</li>
-<li>A downloading function, that allows to save the image in your device.</li>
-	<li>An fullscreen activity, which use the library <a href="https://github.com/chrisbanes/PhotoView">PhotoView</a> that implements a zooming Android ImageView.</li>
+<li>A downloading function, that allows to save the image to your device.</li>
+	<li>A fullscreen activity, which uses the library <a href="https://github.com/chrisbanes/PhotoView">PhotoView</a> that implements a zooming Android ImageView.</li>
 </ul>
 <p>The API Key is not included in the project but only into the apk file, just 
 for allowing to try it.</p>
