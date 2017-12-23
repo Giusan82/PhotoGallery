@@ -8,7 +8,7 @@
 <p>This app fetchs a list of pictures available on <a href="https://unsplash.com/" rel="nofollow">Unsplash.com</a> 
 and includes: </p>
 <ul>
-<li>A searcView on the actionBar, in which the instant search is deactivated, because the free API Key included into the <a href="/Giusan82/PhotoGallery/blob/master/photogallery.apk">apk</a> 
+<li>A searcView on the actionBar, in which the instant search is deactivated, because the free API Key included into the <a href="photogallery.apk">apk</a> 
 allows only 50 requests per hour.</li>
 <li>An advanced search to filter the results with Order By, Max Results and so 
 on.</li>
