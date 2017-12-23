@@ -6,7 +6,7 @@
 <p>After I have completed the lesson 07.23 "Preference Summary", I thought to build an app just for practing what I learned so far. The idea was just to implement a recyclerView and viewHolder of a list of data fetched via an HTTP request.
 </p>
 <p>This app fetchs a list of pictures available on <a href="https://unsplash.com/" rel="nofollow">Unsplash.com</a> 
-and include: </p>
+and includes: </p>
 <ul>
 <li>A searcView is been implemented on the actionBar, in which the instant search is deactivated, because the free API Key included into the <a href="/Giusan82/PhotoGallery/blob/master/photogallery.apk">apk</a> 
 allows only 50 requests per hour.</li>
