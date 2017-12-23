@@ -1,4 +1,4 @@
-# PhotoGallery
+<h1>PhotoGallery</h1>
 
 <p>App created for Udacity.com in the course: Google Challenge Scholarship: Android Developer
 <br>
