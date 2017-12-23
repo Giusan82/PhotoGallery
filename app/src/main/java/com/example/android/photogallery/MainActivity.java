@@ -208,7 +208,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             public boolean onQueryTextChange(String newText) {
                 /**this active the instant search, but now it is deactivate
                  * because the free API Key added allows only 50 request per hour
-                 * Just uncomment this for activate the instant search
+                 * Just uncomment this to activate the instant search
                  */
                 //search(newText);
                 return true;
