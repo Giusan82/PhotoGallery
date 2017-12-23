@@ -3,9 +3,15 @@
 <p>App created for Udacity.com in the course: Google Challenge Scholarship: Android Developer
 <br>
 Skill level: <b>intermediate</b></p>
-<p>Now I have just completed the lesson 07.23 "Preference Summary" and I thought to build an app just for practing what I learned so far. The idea was just to implement a recyclerView and viewHolder of a list of data fetched via an HTTP request.
-This app fetchs a list of pictures available on <a href="https://unsplash.com/" rel="nofollow">Unsplash.com</a>.
-A searcView is been implemented on the actionBar, in which the instant search is deactivated, because the free API Key included into the <a href="/Giusan82/PhotoGallery/blob/master/photogallery.apk">apk</a> allows only 50 requests per hour. The API Key is not included in the project but only in the apk, just for allowing to try it. Moreover I added an advanced search for filter the results with Order By, Max Results and for orientation. The image are displayed using the Image Loader Library <a href="https://github.com/bumptech/glide">Glide</a>, which it handles image loading/caching. A downloading function is included, that allows to save the image in your device.</p>
+<p>After I have completed the lesson 07.23 "Preference Summary", I thought to build an app just for practing what I learned so far. The idea was just to implement a recyclerView and viewHolder of a list of data fetched via an HTTP request.
+This app fetchs a list of pictures available on <a href="https://unsplash.com/" rel="nofollow">Unsplash.com</a> 
+and include:&nbsp; The API Key is not included in the project but only into the apk 
+file, just for allowing to try it. Moreover I added&nbsp; </p>
+<li>A searcView is been implemented on the actionBar, in which the instant search is deactivated, because the free API Key included into the <a href="/Giusan82/PhotoGallery/blob/master/photogallery.apk">apk</a> 
+allows only 50 requests per hour.</li>
+<li>An advanced search for filter the results with Order By, Max Results and for orientation.</li>
+<li>The image are displayed using the Image Loader Library <a href="https://github.com/bumptech/glide">Glide</a>, which it handles image loading/caching.</li>
+<li>A downloading function is included, that allows to save the image in your device.</li>
 <p>Here some screenshots:</p>
 <p align="center">
   <img src="2017-12-21_031145.jpg" height="450" style="max-width:100%;">
