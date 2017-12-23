@@ -10,7 +10,7 @@ A searcView is been implemented on the actionBar, in which the instant search is
 <p align="center">
   <img src="2017-12-21_031145.jpg" width="280" style="max-width:100%;">
   <img src="2017-12-21_224958.jpg" width="280" style="max-width:100%;">
-  <a href="/Giusan82/PhotoGallery/blob/master/2017-12-21_031515.jpg" target="_blank"><img src="/Giusan82/PhotoGallery/raw/master/2017-12-21_031515.jpg" width="280" style="max-width:100%;"></a>
+  <a href="2017-12-21_031515.jpg" target="_blank"><img src="2017-12-21_031515.jpg" width="280" style="max-width:100%;"></a>
 </p>
 <p>An fullscreen activity is also added, which use the library <a href="https://github.com/chrisbanes/PhotoView">PhotoView</a> that implements a zooming Android ImageView.</p>
 <p align="center">
