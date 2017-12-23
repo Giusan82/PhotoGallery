@@ -3,9 +3,8 @@
 <p>App created for Udacity.com in the course: Google Challenge Scholarship: Android Developer
 <br>
 <i>Skill level</i>: <b>intermediate</b></p>
-<p>After I have completed the lesson 07.23 "Preference Summary", I thought to build an app just for practicing what I learned so far. The idea was just to implement a recyclerView and viewHolder of a list of data fetched via an HTTP request.
-</p>
-<p>This app fetches a list of pictures available on <a href="https://unsplash.com/" rel="nofollow">Unsplash.com</a> 
+<p>After I have completed the lesson 07.23 "Preference Summary", I thought to build an app just for practicing what I learned so far.</p>
+<p>This app implements a recyclerView and viewHolder of a list of pictures fetched via an HTTP request from <a href="https://unsplash.com/" rel="nofollow">Unsplash.com</a> 
 and includes: </p>
 <ul>
 <li>A searcView on the actionBar, in which the instant search is deactivated, because the free API Key included into the <a href="photogallery.apk">apk</a> 
