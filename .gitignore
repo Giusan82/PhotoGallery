@@ -1,5 +1,4 @@
 #built application files
-#*.apk
 *.ap_
 
 # files for the dex VM
@@ -29,7 +28,7 @@ Thumbs.db
 build/
 .navigation
 captures/
-#output.json 
+output.json 
 
 #NDK
 obj/
