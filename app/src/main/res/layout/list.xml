@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/card_margin"
+    app:cardCornerRadius="@dimen/cardCornerRadius"
+    app:cardElevation="@dimen/cardElevation"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="false"
+    card_view:cardBackgroundColor="@android:color/transparent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:layout_width="@dimen/progressBar"
+            android:layout_height="@dimen/progressBar"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+        <ImageView
+            android:id="@+id/iv_list_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:minHeight="@dimen/minHeight_images"
+            android:scaleType="fitStart"
+            tools:src="@drawable/placeholder" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/textList_background"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/item_popupmenu"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/text_card_margin"
+                android:layout_toLeftOf="@+id/item_popupmenu"
+                android:layout_toStartOf="@+id/item_popupmenu"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="@integer/maxLines"
+                android:textColor="@color/textList"
+                android:textSize="@dimen/text_card_size_big"
+                android:textStyle="bold"
+                tools:text="Picture Title" />
+
+            <TextView
+                android:id="@+id/item_popupmenu"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center_horizontal"
+                android:text="&#8942;"
+                android:textColor="@color/textList"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/item_popupmenu"
+                android:layout_marginBottom="@dimen/text_card_margin"
+                android:layout_marginLeft="@dimen/text_card_margin"
+                android:layout_marginTop="@dimen/text_card_margin"
+                android:layout_toLeftOf="@+id/tv_values"
+                android:layout_toStartOf="@+id/tv_values"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="@integer/maxLines"
+                android:textColor="@color/textList"
+                android:textSize="@dimen/text_card_size"
+                tools:text="Author Name" />
+
+            <TextView
+                android:id="@+id/tv_values"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_author"
+                android:layout_alignBottom="@+id/tv_author"
+                android:layout_alignEnd="@+id/item_popupmenu"
+                android:layout_alignRight="@+id/item_popupmenu"
+                android:layout_below="@+id/item_popupmenu"
+                android:layout_marginLeft="@dimen/text_card_margin"
+                android:layout_marginRight="@dimen/text_card_margin"
+                android:fontFamily="@font/fontawesome"
+                android:gravity="center_vertical"
+                android:textColor="@color/textList"
+                android:textSize="@dimen/text_card_size"
+                tools:text="&#xf004; 100000 &#xf0ab; 100000 &#xf06e; 100000" />
+        </RelativeLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

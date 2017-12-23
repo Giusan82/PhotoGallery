@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!---Order by-->
+    <string-array name="settings_order_by_labels">
+        <item>@string/settings_order_by_popolarity_label</item>
+        <item>@string/settings_order_by_most_viewed_label</item>
+        <item>@string/settings_order_by_most_downloaded_label</item>
+        <item>@string/settings_order_by_latest_label</item>
+        <item>@string/settings_order_by_oldest_label</item>
+    </string-array>
+    <string-array name="settings_order_by_values">
+        <item>@string/settings_order_by_popolarity_value</item>
+        <item>@string/settings_order_by_most_viewed_value</item>
+        <item>@string/settings_order_by_most_downloaded_value</item>
+        <item>@string/settings_order_by_latest_value</item>
+        <item>@string/settings_order_by_oldest_value</item>
+    </string-array>
+    <!--Max Results-->
+    <string-array name="settings_max_results_labels">
+        <item>@string/settings_max_results_10_label</item>
+        <item>@string/settings_max_results_20_label</item>
+        <item>@string/settings_max_results_30_label</item>
+    </string-array>
+    <string-array name="settings_max_results_values">
+        <item>@string/settings_max_results_10_value</item>
+        <item>@string/settings_max_results_20_value</item>
+        <item>@string/settings_max_results_30_value</item>
+    </string-array>
+    <!--Orientation-->
+    <string-array name="settings_orientation_labels">
+        <item>@string/settings_landscape_label</item>
+        <item>@string/settings_portrait_label</item>
+        <item>@string/settings_squarish_label</item>
+    </string-array>
+    <string-array name="settings_orientation_values">
+        <item>@string/settings_landscape_value</item>
+        <item>@string/settings_portrait_value</item>
+        <item>@string/settings_squarish_value</item>
+    </string-array>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="minHeight_images">100dp</dimen>
+    <dimen name="image_empty_list">180dp</dimen>
+    <dimen name="card_margin">5dp</dimen>
+    <dimen name="text_card_margin">7dp</dimen>
+    <dimen name="cardCornerRadius">8dp</dimen>
+    <dimen name="cardElevation">4dp</dimen>
+    <dimen name="button_size">45dp</dimen>
+    <dimen name="divider">1dp</dimen>
+
+    <!--text size-->
+    <dimen name="text_card_size">10sp</dimen>
+    <dimen name="text_card_size_big">14sp</dimen>
+    <dimen name="title">16sp</dimen>
+
+    <!--ProgressBar-->
+    <dimen name="progressBar">42dp</dimen>
+    <dimen name="progressBarBig">84dp</dimen>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/settings_title">
+    <PreferenceCategory
+        android:layout="@layout/preferences_category"
+        android:title="@string/category_general">
+        <ListPreference
+            android:defaultValue="@string/settings_order_by_default"
+            android:entries="@array/settings_order_by_labels"
+            android:entryValues="@array/settings_order_by_values"
+            android:key="@string/settings_order_by_key"
+            android:title="@string/settings_order_by_label" />
+        <ListPreference
+            android:defaultValue="@string/settings_max_results_default"
+            android:entries="@array/settings_max_results_labels"
+            android:entryValues="@array/settings_max_results_values"
+            android:key="@string/settings_max_results_key"
+            android:selectAllOnFocus="true"
+            android:title="@string/settings_max_results_label" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:layout="@layout/preferences_category"
+        android:title="@string/category_formats">
+        <ListPreference
+            android:defaultValue="@string/settings_orientation_default"
+            android:entries="@array/settings_orientation_labels"
+            android:entryValues="@array/settings_orientation_values"
+            android:key="@string/settings_orientation_key"
+            android:title="@string/settings_orientation_label" />
+        <android.support.v7.preference.SwitchPreferenceCompat
+            android:defaultValue="@bool/pref_show_featured"
+            android:key="@string/settings_featured_key"
+            android:summaryOff="@string/checkbox_summary_off"
+            android:summaryOn="@string/checkbox_summary_on"
+            android:title="@string/settings_featured_label" />
+    </PreferenceCategory>
+</PreferenceScreen>

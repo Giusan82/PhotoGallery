@@ -1,0 +1,87 @@
+<resources>
+    <!--UI strings [CHAR LIMIT=NONE]-->
+    <string name="app_name">PhotoGallery</string>
+    <!-- [CHAR LIMIT=NONE] -->
+    <string name="no_found">No results found.</string>
+    <!-- [CHAR LIMIT=NONE] -->
+    <string name="no_found_message">Please try again with a different research.</string>
+    <!-- [CHAR LIMIT=NONE] -->
+    <string name="no_internet">Check your connection or try again.</string>
+    <!-- [CHAR LIMIT=NONE] -->
+    <string name="no_internet_title">No Internet Connection!</string>
+    <!-- [CHAR LIMIT=NONE] -->
+    <string name="searchHint">Search</string>
+    <string name="icon_search" translatable="false">&#xf002;</string>
+    <string name="tv_values" translatable="false">%1$s | &#xf004; %2$d | &#xf0ab; %3$d | &#xf06e; %4$d</string>
+    <!-- [CHAR LIMIT=NONE] -->
+    <string name="photo_zoom">Fullscreen</string>
+    <!-- [CHAR LIMIT=NONE] -->
+    <string name="not_available">This image is not available.</string>
+    <!-- [CHAR LIMIT=NONE] -->
+    <string name="close_button">Close</string>
+    <!-- [CHAR LIMIT=NONE] -->
+    <string name="refresh_button">Refresh</string>
+    <!-- [CHAR LIMIT=NONE] -->
+    <string name="out_of_oder">This isn\'t implemented yet</string>
+    <!-- [CHAR LIMIT=NONE] -->
+    <string name="photo_download">Download</string>
+    <!-- [CHAR LIMIT=NONE] -->
+    <string name="image_saved">Image Saved</string>
+    <!-- [CHAR LIMIT=NONE] -->
+    <string name="saving_image">Saving...</string>
+
+    <!-- Settings Menu Item [CHAR LIMIT=NONE] -->
+    <string name="settings_search">Advanced Search</string>
+    <!-- Settings Activity Title [CHAR LIMIT=NONE] -->
+    <string name="settings_title">Advanced Search</string>
+    <!-- Strings For Max Results Preference [CHAR LIMIT=NONE] -->
+    <string name="settings_max_results_label">Max Results</string>
+    <string name="settings_max_results_key" translatable="false">max_results</string>
+    <string name="settings_max_results_default" translatable="false">10</string>
+    <!-- Label for max results option [CHAR LIMIT=NONE] -->
+    <string name="settings_max_results_10_label">10</string>
+    <string name="settings_max_results_10_value" translatable="false">10</string>
+    <string name="settings_max_results_20_label">20</string>
+    <string name="settings_max_results_20_value" translatable="false">20</string>
+    <string name="settings_max_results_30_label">30</string>
+    <string name="settings_max_results_30_value" translatable="false">30</string>
+    <!-- Strings For Order-By Preference [CHAR LIMIT=NONE] -->
+    <string name="settings_order_by_label">Order By</string>
+    <string name="settings_order_by_key" translatable="false">order_by</string>
+    <string name="settings_order_by_default" translatable="false">popular</string>
+    <!-- Label for order-by most popular option [CHAR LIMIT=NONE] -->
+    <string name="settings_order_by_popolarity_label">Popular</string>
+    <string name="settings_order_by_popolarity_value" translatable="false">popular</string>
+    <!-- Label for order-by most viewed option [CHAR LIMIT=NONE] -->
+    <string name="settings_order_by_most_viewed_label">Most Viewed</string>
+    <string name="settings_order_by_most_viewed_value" translatable="false">most_viewed</string>
+    <!-- Label for order-by most downloaded option [CHAR LIMIT=NONE] -->
+    <string name="settings_order_by_most_downloaded_label">Most Downloaded</string>
+    <string name="settings_order_by_most_downloaded_value" translatable="false">most_downloaded</string>
+    <!-- Label for order-by latest option [CHAR LIMIT=NONE] -->
+    <string name="settings_order_by_latest_label">Latest</string>
+    <string name="settings_order_by_latest_value" translatable="false">latest</string>
+    <!-- Label for order-by oldest option [CHAR LIMIT=NONE] -->
+    <string name="settings_order_by_oldest_label">Oldest</string>
+    <string name="settings_order_by_oldest_value" translatable="false">oldest</string>
+
+    <!-- Strings For Orientation Preference [CHAR LIMIT=NONE] -->
+    <string name="settings_orientation_label">Orientation</string>
+    <string name="settings_orientation_key" translatable="false">orientation</string>
+    <string name="settings_orientation_default" translatable="false">landscape</string>
+    <!-- Label for orientation options [CHAR LIMIT=NONE] -->
+    <string name="settings_landscape_label">Landscape</string>
+    <string name="settings_landscape_value" translatable="false">landscape</string>
+    <string name="settings_portrait_label">Portrait</string>
+    <string name="settings_portrait_value" translatable="false">portrait</string>
+    <string name="settings_squarish_label">Squarish</string>
+    <string name="settings_squarish_value" translatable="false">squarish</string>
+    <!--Switch buttons  [CHAR LIMIT=NONE]-->
+    <string name="settings_featured_label">Featured</string>
+    <string name="settings_featured_key" translatable="false">featured</string>
+    <string name="checkbox_summary_on">On</string>
+    <string name="checkbox_summary_off">Off</string>
+    <!--Category settings [CHAR LIMIT=NONE]-->
+    <string name="category_general">General</string>
+    <string name="category_formats">Formats</string>
+</resources>
