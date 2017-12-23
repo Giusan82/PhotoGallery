@@ -5,7 +5,7 @@
 <i>Skill level</i>: <b>intermediate</b></p>
 <p>After I have completed the lesson 07.23 "Preference Summary", I thought to build an app just for practicing what I learned so far.</p>
 <p>This app implements a recyclerView and viewHolder of a list of pictures fetched via an HTTP request from <a href="https://unsplash.com/" rel="nofollow">Unsplash.com</a> 
-and includes: </p>
+and also includes: </p>
 <ul>
 <li>A searcView on the actionBar, in which the instant search is deactivated, because the free API Key included into the <a href="photogallery.apk">apk</a> 
 allows only 50 requests per hour.</li>
