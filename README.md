@@ -8,12 +8,13 @@
 <p>This app fetchs a list of pictures available on <a href="https://unsplash.com/" rel="nofollow">Unsplash.com</a> 
 and includes: </p>
 <ul>
-<li>A searcView is been implemented on the actionBar, in which the instant search is deactivated, because the free API Key included into the <a href="/Giusan82/PhotoGallery/blob/master/photogallery.apk">apk</a> 
+<li>A searcView on the actionBar, in which the instant search is deactivated, because the free API Key included into the <a href="/Giusan82/PhotoGallery/blob/master/photogallery.apk">apk</a> 
 allows only 50 requests per hour.</li>
-<li>An advanced search for filter the results with Order By, Max Results and for orientation.</li>
+<li>An advanced search to filter the results with Order By, Max Results and so 
+on.</li>
 <li>The image are displayed using the Image Loader Library <a href="https://github.com/bumptech/glide">Glide</a>, which it handles image loading/caching.</li>
-<li>A downloading function is included, that allows to save the image in your device.</li>
-	<li>An fullscreen activity is also added, which use the library <a href="https://github.com/chrisbanes/PhotoView">PhotoView</a> that implements a zooming Android ImageView.</li>
+<li>A downloading function, that allows to save the image in your device.</li>
+	<li>An fullscreen activity, which use the library <a href="https://github.com/chrisbanes/PhotoView">PhotoView</a> that implements a zooming Android ImageView.</li>
 </ul>
 <p>The API Key is not included in the project but only into the apk file, just 
 for allowing to try it.</p>
