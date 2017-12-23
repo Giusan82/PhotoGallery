@@ -3,9 +3,9 @@
 <p>App created for Udacity.com in the course: Google Challenge Scholarship: Android Developer
 <br>
 <i>Skill level</i>: <b>intermediate</b></p>
-<p>After I have completed the lesson 07.23 "Preference Summary", I thought to build an app just for practing what I learned so far. The idea was just to implement a recyclerView and viewHolder of a list of data fetched via an HTTP request.
+<p>After I have completed the lesson 07.23 "Preference Summary", I thought to build an app just for practicing what I learned so far. The idea was just to implement a recyclerView and viewHolder of a list of data fetched via an HTTP request.
 </p>
-<p>This app fetchs a list of pictures available on <a href="https://unsplash.com/" rel="nofollow">Unsplash.com</a> 
+<p>This app fetches a list of pictures available on <a href="https://unsplash.com/" rel="nofollow">Unsplash.com</a> 
 and includes: </p>
 <ul>
 <li>A searcView on the actionBar, in which the instant search is deactivated, because the free API Key included into the <a href="photogallery.apk">apk</a> 
@@ -14,7 +14,7 @@ allows only 50 requests per hour.</li>
 on.</li>
 <li>The image are displayed using the Image Loader Library <a href="https://github.com/bumptech/glide">Glide</a>, which it handles image loading/caching.</li>
 <li>A downloading function, that allows to save the image to your device.</li>
-	<li>A fullscreen activity, which uses the library <a href="https://github.com/chrisbanes/PhotoView">PhotoView</a> that implements a zooming Android ImageView.</li>
+	<li>A full screen activity, which uses the library <a href="https://github.com/chrisbanes/PhotoView">PhotoView</a> that implements a zooming Android ImageView.</li>
 </ul>
 <p>The API Key is not included in the project but only into the apk file, just 
 for allowing to try it.</p>
