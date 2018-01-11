@@ -20,9 +20,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-
-import uk.co.senab.photoview.PhotoView;
-import uk.co.senab.photoview.PhotoViewAttacher;
+import com.github.chrisbanes.photoview.OnViewTapListener;
+import com.github.chrisbanes.photoview.PhotoView;
 
 public class FullScreenActivity extends AppCompatActivity {
 
@@ -99,7 +98,7 @@ public class FullScreenActivity extends AppCompatActivity {
                 .crossFade().dontTransform().into(mPhotoView);
     }
 
-    private PhotoViewAttacher.OnViewTapListener mTapListener = new PhotoViewAttacher.OnViewTapListener() {
+    private OnViewTapListener mTapListener = new OnViewTapListener() {
         @Override
         public void onViewTap(View view, float x, float y) {
             new CountDownTimer(3000, 1000) {
