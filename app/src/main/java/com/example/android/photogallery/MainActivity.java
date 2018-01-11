@@ -32,8 +32,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<ItemsList>> {
+public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<ItemsList>>, SharedPreferences.OnSharedPreferenceChangeListener {
     private static final int ITEMS_LOADER_ID = 0;
+    private static boolean PREFERENCES_CHANGED = false;
     private static final String SERVER_URL = "https://api.unsplash.com/photos/random/";
     private final static String QUERY_PARAM = "query";//this call a query
     private final static String COUNT_PARAM = "count"; //this set the max number of pictures
@@ -99,6 +100,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         //Shows the items list using a custom adapter
         adapter = new GridAdapter(this, mItems);
         recyclerView.setAdapter(adapter);
+        //Register MainActivity as an OnPreferenceChangedListener to receive a callback when a SharedPreference has changed.
+        PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this);
     }
 
     /**
@@ -275,5 +278,27 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     //restart the loader
     private void refresh() {
         loaderManager.restartLoader(ITEMS_LOADER_ID, null, this);
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
+        //Set this flag to true so onStart the loader refresh the data
+        PREFERENCES_CHANGED = true;
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (PREFERENCES_CHANGED) {
+            refresh();
+            PREFERENCES_CHANGED = false;
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        android.support.v7.preference.PreferenceManager.getDefaultSharedPreferences(this)
+                .unregisterOnSharedPreferenceChangeListener(this);
     }
 }
