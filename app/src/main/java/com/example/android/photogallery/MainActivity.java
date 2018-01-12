@@ -34,7 +34,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<ItemsList>>, SharedPreferences.OnSharedPreferenceChangeListener {
     private static final int ITEMS_LOADER_ID = 0;
-    private static boolean PREFERENCES_CHANGED = false;
     private static final String SERVER_URL = "https://api.unsplash.com/photos/random/";
     private final static String QUERY_PARAM = "query";//this call a query
     private final static String COUNT_PARAM = "count"; //this set the max number of pictures
@@ -282,17 +281,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
-        //Set this flag to true so onStart the loader refresh the data
-        PREFERENCES_CHANGED = true;
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if (PREFERENCES_CHANGED) {
-            refresh();
-            PREFERENCES_CHANGED = false;
-        }
+        //Refresh the data when preference are changed
+        refresh();
     }
 
     @Override
