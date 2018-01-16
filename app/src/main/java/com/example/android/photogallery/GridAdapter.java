@@ -98,7 +98,7 @@ public class GridAdapter extends RecyclerView.Adapter<ItemsViewHolder> {
         return isConnected;
     }
 
-    private void popupMenu(final ItemsList currentItem, final ItemsViewHolder holder){
+    private void popupMenu(final ItemsList currentItem, final ItemsViewHolder holder) {
         final String image = currentItem.getImage_raw();
         //creating a popup menu
         PopupMenu popup = new PopupMenu(mContext, holder.itemPopupMenu);
@@ -153,7 +153,7 @@ public class GridAdapter extends RecyclerView.Adapter<ItemsViewHolder> {
             Field field = PopupMenu.class.getDeclaredField("mPopup");
             field.setAccessible(true);
             menuObject = field.get(popup);
-            classes = new Class[] { boolean.class };
+            classes = new Class[]{boolean.class};
             menuObject.getClass().getDeclaredMethod("setForceShowIcon", classes).invoke(menuObject, true);
         } catch (Exception e) {
             // These exceptions should never happen, but in the case it log the error and show the menu normally.
@@ -168,7 +168,7 @@ public class GridAdapter extends RecyclerView.Adapter<ItemsViewHolder> {
             Field field = menuObject.getClass().getDeclaredField("mPopup");
             field.setAccessible(true);
             menuObject = field.get(menuObject);
-            classes = new Class[] { int.class };
+            classes = new Class[]{int.class};
             // Get the width of the popup window
             int width = (Integer) menuObject.getClass().getDeclaredMethod("getWidth").invoke(menuObject);
             // Invoke setHorizontalOffset() with the negative width to move left by that distance
