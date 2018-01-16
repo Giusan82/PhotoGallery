@@ -40,7 +40,7 @@
     <string name="settings_max_results_label">Max Results</string>
     <string name="settings_max_results_key" translatable="false">max_results</string>
     <string name="settings_max_results_default" translatable="false">10</string>
-    <!-- Label for max results option [CHAR LIMIT=NONE] -->
+    <!-- String for max results option [CHAR LIMIT=NONE] -->
     <string name="settings_max_results_10_label">10</string>
     <string name="settings_max_results_10_value" translatable="false">10</string>
     <string name="settings_max_results_20_label">20</string>
@@ -51,19 +51,19 @@
     <string name="settings_order_by_label">Order By</string>
     <string name="settings_order_by_key" translatable="false">order_by</string>
     <string name="settings_order_by_default" translatable="false">popular</string>
-    <!-- Label for order-by most popular option [CHAR LIMIT=NONE] -->
+    <!-- String for order-by most popular option [CHAR LIMIT=NONE] -->
     <string name="settings_order_by_popolarity_label">Popular</string>
     <string name="settings_order_by_popolarity_value" translatable="false">popular</string>
-    <!-- Label for order-by most viewed option [CHAR LIMIT=NONE] -->
+    <!-- String for order-by most viewed option [CHAR LIMIT=NONE] -->
     <string name="settings_order_by_most_viewed_label">Most Viewed</string>
     <string name="settings_order_by_most_viewed_value" translatable="false">most_viewed</string>
-    <!-- Label for order-by most downloaded option [CHAR LIMIT=NONE] -->
+    <!-- String for order-by most downloaded option [CHAR LIMIT=NONE] -->
     <string name="settings_order_by_most_downloaded_label">Most Downloaded</string>
     <string name="settings_order_by_most_downloaded_value" translatable="false">most_downloaded</string>
-    <!-- Label for order-by latest option [CHAR LIMIT=NONE] -->
+    <!-- String for order-by latest option [CHAR LIMIT=NONE] -->
     <string name="settings_order_by_latest_label">Latest</string>
     <string name="settings_order_by_latest_value" translatable="false">latest</string>
-    <!-- Label for order-by oldest option [CHAR LIMIT=NONE] -->
+    <!-- String for order-by oldest option [CHAR LIMIT=NONE] -->
     <string name="settings_order_by_oldest_label">Oldest</string>
     <string name="settings_order_by_oldest_value" translatable="false">oldest</string>
 
@@ -71,7 +71,7 @@
     <string name="settings_orientation_label">Orientation</string>
     <string name="settings_orientation_key" translatable="false">orientation</string>
     <string name="settings_orientation_default" translatable="false">landscape</string>
-    <!-- Label for orientation options [CHAR LIMIT=NONE] -->
+    <!-- String for orientation options [CHAR LIMIT=NONE] -->
     <string name="settings_landscape_label">Landscape</string>
     <string name="settings_landscape_value" translatable="false">landscape</string>
     <string name="settings_portrait_label">Portrait</string>
@@ -92,7 +92,7 @@
     <string name="settings_theme_label">Theme</string>
     <string name="settings_theme_key" translatable="false">theme</string>
     <string name="settings_theme_default" translatable="false">dark</string>
-    <!-- Label for orientation options [CHAR LIMIT=NONE] -->
+    <!-- String for theme options [CHAR LIMIT=NONE] -->
     <string name="settings_darkTheme_label">Dark Theme</string>
     <string name="settings_darkTheme_value" translatable="false">dark</string>
     <string name="settings_lightTheme_label">Light Theme</string>

@@ -12,7 +12,6 @@
         <item name="colorControlNormal">@color/colorPrimaryDark</item>
         <item name="android:windowBackground">@color/colorBackground</item>
         <item name="android:textViewStyle">@style/textViewStyle</item>
-        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
         <item name="cloud_download_icon">@drawable/ic_cloud_download_white_24dp</item>
         <item name="more_vertical_icon">@drawable/ic_more_vert_white_24dp</item>
         <item name="favorite_icon">@drawable/ic_favorite_white_24dp</item>
@@ -33,18 +32,12 @@
         <item name="colorControlNormal">@color/colorPrimaryDark</item>
         <item name="android:windowBackground">@color/colorBackgroundLight</item>
         <item name="android:textViewStyle">@style/textViewStyle</item>
-        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
         <item name="cloud_download_icon">@drawable/ic_cloud_download_black_24dp</item>
         <item name="more_vertical_icon">@drawable/ic_more_vert_black_24dp</item>
         <item name="favorite_icon">@drawable/ic_favorite_black_24dp</item>
         <item name="fullscreen_icon">@drawable/ic_fullscreen_black_24dp</item>
         <item name="settings_icon">@drawable/ic_settings_black_24dp</item>
         <item name="search_icon">@drawable/ic_search_black_24dp</item>
-    </style>
-
-    <style name="OverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
-        <!-- Required for pre-Lollipop. -->
-
     </style>
 
     <style name="textViewStyle">
@@ -57,6 +50,7 @@
         <item name="colorAccent">@color/colorText</item>
         <item name="android:background">@color/colorBackground</item>
     </style>
+
     <style name="alertDialogLight" parent="Theme.AppCompat.DayNight.Dialog.Alert">
         <item name="android:textColorPrimary">@color/colorTextLight</item>
         <item name="android:textColor">@color/colorTextLight</item>
@@ -69,6 +63,7 @@
         <item name="android:dividerHeight">@dimen/divider</item>
         <item name="android:background">@color/menu_background</item>
     </style>
+
     <style name="PopupMenuListViewLight" parent="@style/Widget.AppCompat.ListView.DropDown">
         <item name="android:divider">@color/colorTextLight</item>
         <item name="android:dividerHeight">@dimen/divider</item>

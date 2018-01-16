@@ -73,7 +73,7 @@ public class FullScreenActivity extends AppCompatActivity {
     private void alertDialogMessage(String title, String message) {
         int style = R.style.alertDialog;
         int icon = R.drawable.ic_wifi_off_white;
-        if(theme.equals("light")){
+        if (theme.equals("light")) {
             style = R.style.alertDialogLight;
             icon = R.drawable.ic_wifi_off;
         }

@@ -58,9 +58,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         theme = sharedPrefs.getString(getString(R.string.settings_theme_key), getString(R.string.settings_theme_default));
         Log.e("MainActivity -> Theme", getTheme().toString());
-        if(theme.equals("light")){
+        if (theme.equals("light")) {
             setTheme(R.style.AppThemeLight);
-        }else {
+        } else {
             setTheme(R.style.AppThemeDark);
         }
         super.onCreate(savedInstanceState);
@@ -265,7 +265,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public void alertDialogMessage(String title, String message) {
         int style = R.style.alertDialog;
         int icon = R.drawable.ic_wifi_off_white;
-        if(theme.equals("light")){
+        if (theme.equals("light")) {
             style = R.style.alertDialogLight;
             icon = R.drawable.ic_wifi_off;
         }
@@ -298,10 +298,10 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         //Refresh the data when preference are changed
-        if(!key.equals(getString(R.string.settings_theme_key))){
+        if (!key.equals(getString(R.string.settings_theme_key))) {
             refresh();
         }
-        if(key.equals(getString(R.string.settings_theme_key))){
+        if (key.equals(getString(R.string.settings_theme_key))) {
             MainActivity.this.recreate();
         }
     }
