@@ -20,9 +20,9 @@ on.</li>
 for allowing to try it.</p>
 <p>Here some screenshots:</p>
 <p align="center">
-  <img src="2018-01-16_02.16.15.842.jpg" height="450" style="max-width:100%;">
+  <img src="2018-01-16_02.16.15.842.png" height="450" style="max-width:100%;">
   <img src="2017-12-21_224958.jpg" height="450" style="max-width:100%;">
-  <img src="2018-01-16_02.13.51.315.jpg" height="450" style="max-width:100%;">
+  <img src="2018-01-16_02.13.51.315.png" height="450" style="max-width:100%;">
 </p>
 <p>Here an example of a zooming Android ImageView:</p>
 <p align="center">
