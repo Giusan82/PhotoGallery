@@ -16,7 +16,6 @@ import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -57,7 +56,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     protected void onCreate(Bundle savedInstanceState) {
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         theme = sharedPrefs.getString(getString(R.string.settings_theme_key), getString(R.string.settings_theme_default));
-        Log.e("MainActivity -> Theme", getTheme().toString());
         if (theme.equals("light")) {
             setTheme(R.style.AppThemeLight);
         } else {
