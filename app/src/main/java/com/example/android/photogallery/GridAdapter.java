@@ -146,15 +146,15 @@ public class GridAdapter extends RecyclerView.Adapter<ItemsViewHolder> {
             }
         });
 
-        // Force icons to show
+        // Force icons on popup menu
         Object menuObject;
-        Class[] argTypes;
+        Class[] classes;
         try {
-            Field fMenuHelper = PopupMenu.class.getDeclaredField("mPopup");
-            fMenuHelper.setAccessible(true);
-            menuObject = fMenuHelper.get(popup);
-            argTypes = new Class[] { boolean.class };
-            menuObject.getClass().getDeclaredMethod("setForceShowIcon", argTypes).invoke(menuObject, true);
+            Field field = PopupMenu.class.getDeclaredField("mPopup");
+            field.setAccessible(true);
+            menuObject = field.get(popup);
+            classes = new Class[] { boolean.class };
+            menuObject.getClass().getDeclaredMethod("setForceShowIcon", classes).invoke(menuObject, true);
         } catch (Exception e) {
             // These exceptions should never happen, but in the case it log the error and show the menu normally.
             Log.w(LOG_TAG + " -> PopupMenu", "Error showing menu icons", e);
@@ -163,22 +163,21 @@ public class GridAdapter extends RecyclerView.Adapter<ItemsViewHolder> {
         }
         //displaying the popup
         popup.show();
-        // Try to force some horizontal offset
+        // Force an horizontal offset of popup menu
         try {
-            Field fListPopup = menuObject.getClass().getDeclaredField("mPopup");
-            fListPopup.setAccessible(true);
-            Object listPopup = fListPopup.get(menuObject);
-            argTypes = new Class[] { int.class };
-            Class listPopupClass = listPopup.getClass();
+            Field field = menuObject.getClass().getDeclaredField("mPopup");
+            field.setAccessible(true);
+            menuObject = field.get(menuObject);
+            classes = new Class[] { int.class };
             // Get the width of the popup window
-            int width = (Integer) listPopupClass.getDeclaredMethod("getWidth").invoke(listPopup);
+            int width = (Integer) menuObject.getClass().getDeclaredMethod("getWidth").invoke(menuObject);
             // Invoke setHorizontalOffset() with the negative width to move left by that distance
-            listPopupClass.getDeclaredMethod("setHorizontalOffset", argTypes).invoke(listPopup, -width + 70);
+            menuObject.getClass().getDeclaredMethod("setHorizontalOffset", classes).invoke(menuObject, -width + 70);
             // Invoke show() to update the window's position
-            listPopupClass.getDeclaredMethod("show").invoke(listPopup);
+            menuObject.getClass().getDeclaredMethod("show").invoke(menuObject);
         } catch (Exception e) {
             // These exceptions should never happen, but in the case it log the error and show the menu normally.
-            Log.w(LOG_TAG + " -> PopupMenu", "Unable to force offset", e);
+            Log.w(LOG_TAG + " -> PopupMenu", "Error forcing offset", e);
         }
     }
 
