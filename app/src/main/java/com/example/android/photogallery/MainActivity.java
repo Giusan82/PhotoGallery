@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         //Shows the items list using a custom adapter
         adapter = new GridAdapter(this, mItems);
         recyclerView.setAdapter(adapter);
-        //Register MainActivity as an OnPreferenceChangedListener to receive a callback when a SharedPreference has changed.
+        //Register MainActivity as an OnSharedPreferenceChangedListener to receive a callback when a SharedPreference has changed.
         PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this);
     }
 
