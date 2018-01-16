@@ -11,6 +11,7 @@ and also includes: </p>
 allows only 50 requests per hour.</li>
 <li>An advanced search to filter the results with Order By, Max Results and so 
 on.</li>
+<li>Dark and Light Theme switchables in settings.</li>
 <li>The image are displayed using the Image Loader Library <a href="https://github.com/bumptech/glide">Glide</a>, which it handles image loading/caching.</li>
 <li>A downloading function, that allows to save the image to your device.</li>
 	<li>A full screen activity, which uses the library <a href="https://github.com/chrisbanes/PhotoView">PhotoView</a> that implements a zooming Android ImageView.</li>
