@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#333333</color>
+    <!--for dark theme-->
+    <color name="colorPrimary">#212121</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#03A9F4</color>
+    <color name="colorBackground">#303030</color>
     <color name="colorText">@android:color/white</color>
     <color name="textList_background">#A6000000</color>
     <color name="textList">@color/cardview_light_background</color>
-    <color name="darker_gray">#555555</color>
+    <color name="menu_background">#424242</color>
     <color name="light_grey">@android:color/darker_gray</color>
+
+    <!--for light theme-->
+    <color name="colorPrimaryLight">#F5F5F5</color>
+    <color name="colorBackgroundLight">#FAFAFA</color>
+    <color name="colorTextLight">@android:color/black</color>
+    <color name="menu_background_light">#ffffff</color>
 </resources>

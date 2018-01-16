@@ -1,6 +1,6 @@
 <resources>
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!-- Base application for dark theme. -->
+    <style name="AppThemeDark" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -10,8 +10,41 @@
         <!-- Custom Layout -->
         <item name="android:textColor">@color/colorText</item>
         <item name="colorControlNormal">@color/colorPrimaryDark</item>
-        <item name="android:windowBackground">@color/colorPrimary</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
         <item name="android:textViewStyle">@style/textViewStyle</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
+        <item name="cloud_download_icon">@drawable/ic_cloud_download_white_24dp</item>
+        <item name="more_vertical_icon">@drawable/ic_more_vert_white_24dp</item>
+        <item name="favorite_icon">@drawable/ic_favorite_white_24dp</item>
+        <item name="fullscreen_icon">@drawable/ic_fullscreen_white_24dp</item>
+        <item name="settings_icon">@drawable/ic_settings_white_24dp</item>
+        <item name="search_icon">@drawable/ic_search_white_24dp</item>
+    </style>
+    <!-- Base application for light theme. -->
+    <style name="AppThemeLight" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryLight</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:dropDownListViewStyle">@style/PopupMenuListViewLight</item>
+
+        <!-- Custom Layout -->
+        <item name="android:textColor">@color/colorTextLight</item>
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+        <item name="android:windowBackground">@color/colorBackgroundLight</item>
+        <item name="android:textViewStyle">@style/textViewStyle</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
+        <item name="cloud_download_icon">@drawable/ic_cloud_download_black_24dp</item>
+        <item name="more_vertical_icon">@drawable/ic_more_vert_black_24dp</item>
+        <item name="favorite_icon">@drawable/ic_favorite_black_24dp</item>
+        <item name="fullscreen_icon">@drawable/ic_fullscreen_black_24dp</item>
+        <item name="settings_icon">@drawable/ic_settings_black_24dp</item>
+        <item name="search_icon">@drawable/ic_search_black_24dp</item>
+    </style>
+
+    <style name="OverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <!-- Required for pre-Lollipop. -->
+
     </style>
 
     <style name="textViewStyle">
@@ -19,15 +52,27 @@
     </style>
 
     <style name="alertDialog" parent="Theme.AppCompat.DayNight.Dialog.Alert">
-        <item name="android:textColorPrimary">@color/colorPrimaryDark</item>
-        <item name="android:textColor">@color/colorAccent</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/colorText</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="colorAccent">@color/colorText</item>
+        <item name="android:background">@color/colorBackground</item>
+    </style>
+    <style name="alertDialogLight" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+        <item name="android:textColorPrimary">@color/colorTextLight</item>
+        <item name="android:textColor">@color/colorTextLight</item>
+        <item name="colorAccent">@color/colorTextLight</item>
+        <item name="android:background">@color/colorBackgroundLight</item>
     </style>
 
     <style name="PopupMenuListView" parent="@style/Widget.AppCompat.ListView.DropDown">
-        <item name="android:divider">@color/colorPrimaryDark</item>
+        <item name="android:divider">@color/colorText</item>
         <item name="android:dividerHeight">@dimen/divider</item>
-        <item name="android:background">@color/darker_gray</item>
+        <item name="android:background">@color/menu_background</item>
+    </style>
+    <style name="PopupMenuListViewLight" parent="@style/Widget.AppCompat.ListView.DropDown">
+        <item name="android:divider">@color/colorTextLight</item>
+        <item name="android:dividerHeight">@dimen/divider</item>
+        <item name="android:background">@color/menu_background_light</item>
     </style>
 
     <!-- FullScreen activity theme-->

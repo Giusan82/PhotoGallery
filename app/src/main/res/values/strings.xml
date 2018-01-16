@@ -12,7 +12,7 @@
     <!-- [CHAR LIMIT=NONE] -->
     <string name="searchHint">Search</string>
     <string name="icon_search" translatable="false">&#xf002;</string>
-    <string name="tv_values" translatable="false">%1$s | &#xf004; %2$d | &#xf0ab; %3$d | &#xf06e; %4$d</string>
+    <string name="tv_values" translatable="false">%1$s | &#xf004; %2$d | &#xf0ed; %3$d | &#xf06e; %4$d</string>
     <!-- [CHAR LIMIT=NONE] -->
     <string name="photo_zoom">Fullscreen</string>
     <!-- [CHAR LIMIT=NONE] -->
@@ -26,12 +26,14 @@
     <!-- [CHAR LIMIT=NONE] -->
     <string name="photo_download">Download</string>
     <!-- [CHAR LIMIT=NONE] -->
+    <string name="like">Like!</string>
+    <!-- [CHAR LIMIT=NONE] -->
     <string name="image_saved">Image Saved</string>
     <!-- [CHAR LIMIT=NONE] -->
     <string name="saving_image">Saving...</string>
 
     <!-- Settings Menu Item [CHAR LIMIT=NONE] -->
-    <string name="settings_search">Advanced Search</string>
+    <string name="settings_search">Settings</string>
     <!-- Settings Activity Title [CHAR LIMIT=NONE] -->
     <string name="settings_title">Advanced Search</string>
     <!-- Strings For Max Results Preference [CHAR LIMIT=NONE] -->
@@ -84,4 +86,15 @@
     <!--Category settings [CHAR LIMIT=NONE]-->
     <string name="category_general">General</string>
     <string name="category_formats">Formats</string>
+    <string name="category_style">Style</string>
+
+    <!-- Strings For theme Preference [CHAR LIMIT=NONE] -->
+    <string name="settings_theme_label">Theme</string>
+    <string name="settings_theme_key" translatable="false">theme</string>
+    <string name="settings_theme_default" translatable="false">dark</string>
+    <!-- Label for orientation options [CHAR LIMIT=NONE] -->
+    <string name="settings_darkTheme_label">Dark Theme</string>
+    <string name="settings_darkTheme_value" translatable="false">dark</string>
+    <string name="settings_lightTheme_label">Light Theme</string>
+    <string name="settings_lightTheme_value" translatable="false">light</string>
 </resources>

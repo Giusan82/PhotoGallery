@@ -3,6 +3,7 @@ package com.example.android.photogallery;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -29,9 +31,13 @@ public class FullScreenActivity extends AppCompatActivity {
     private ProgressBar mLoader; //this loads a circle progress bar as loading bar
     private String mImageUrl;
     private RelativeLayout mParent;
+    public SharedPreferences sharedPrefs;
+    private String theme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        theme = sharedPrefs.getString(getString(R.string.settings_theme_key), getString(R.string.settings_theme_default));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_screen);
         getSupportActionBar().hide();
@@ -65,9 +71,15 @@ public class FullScreenActivity extends AppCompatActivity {
 
     //this set up an alert dialog message
     private void alertDialogMessage(String title, String message) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.alertDialog);
+        int style = R.style.alertDialog;
+        int icon = R.drawable.ic_wifi_off_white;
+        if(theme.equals("light")){
+            style = R.style.alertDialogLight;
+            icon = R.drawable.ic_wifi_off;
+        }
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, style);
         builder.setTitle(title);
-        builder.setIcon(R.drawable.ic_wifi_off);
+        builder.setIcon(icon);
         builder.setMessage(message);
         builder.setNegativeButton(getString(R.string.close_button), new DialogInterface.OnClickListener() {
             @Override

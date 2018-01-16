@@ -26,6 +26,7 @@ import com.example.android.photogallery.utilities.ItemsViewHolder;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import java.lang.reflect.Field;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -61,7 +62,7 @@ public class GridAdapter extends RecyclerView.Adapter<ItemsViewHolder> {
 
     //here the recycler view is populated with data provided from the class ItemsList
     @Override
-    public void onBindViewHolder(final ItemsViewHolder holder, int position) {
+    public void onBindViewHolder(final ItemsViewHolder holder, final int position) {
         final ItemsList currentItem = mItemList.get(position);
         if (currentItem.hasTitle()) {
             holder.tv_title.setText(currentItem.getTitle());
@@ -78,51 +79,7 @@ public class GridAdapter extends RecyclerView.Adapter<ItemsViewHolder> {
         holder.itemPopupMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String image = currentItem.getImage_raw();
-                //creating a popup menu
-                PopupMenu popup = new PopupMenu(mContext, holder.itemPopupMenu);
-                //inflating menu from xml resource
-                popup.inflate(R.menu.overflow_menu);
-                //adding click listener
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.photo_zoom:
-                                //this open tha FullScreenActivity
-                                if (currentItem.getImage_small() != null) {
-                                    Intent intent = new Intent(mContext, FullScreenActivity.class);
-                                    intent.putExtra(Intent.EXTRA_TEXT, image);
-                                    if (intent.resolveActivity(mContext.getPackageManager()) != null) {
-                                        mContext.startActivity(intent);
-                                    }
-                                } else { //if the items have no link, a toast message is displayed
-                                    Toast.makeText(mContext, mContext.getString(R.string.not_available), Toast.LENGTH_SHORT).show();
-                                }
-                                break;
-                            case R.id.photo_download:
-                                if (isConnected()) {
-                                    if (currentItem.getImage_raw() != null) {
-                                        Toast.makeText(mContext, mContext.getString(R.string.saving_image), Toast.LENGTH_LONG).show();
-                                        Glide.with(mContext).load(image).asBitmap().into(new SimpleTarget<Bitmap>() {
-                                            @Override
-                                            public void onResourceReady(Bitmap resource, GlideAnimation glideAnimation) {
-                                                saveImage(resource, currentItem.getID());
-                                            }
-                                        });
-                                    } else {//if the items have no link, a toast message is displayed
-                                        Toast.makeText(mContext, mContext.getString(R.string.not_available), Toast.LENGTH_SHORT).show();
-                                    }
-                                } else {
-                                    Toast.makeText(mContext, mContext.getString(R.string.no_internet_title), Toast.LENGTH_SHORT).show();
-                                }
-                                break;
-                        }
-                        return false;
-                    }
-                });
-                //displaying the popup
-                popup.show();
+                popupMenu(currentItem, holder);
             }
         });
     }
@@ -139,6 +96,90 @@ public class GridAdapter extends RecyclerView.Adapter<ItemsViewHolder> {
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
         Boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
         return isConnected;
+    }
+
+    private void popupMenu(final ItemsList currentItem, final ItemsViewHolder holder){
+        final String image = currentItem.getImage_raw();
+        //creating a popup menu
+        PopupMenu popup = new PopupMenu(mContext, holder.itemPopupMenu);
+        //inflating menu from xml resource
+        popup.inflate(R.menu.overflow_menu);
+        //adding click listener
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.photo_zoom:
+                        //this open tha FullScreenActivity
+                        if (currentItem.getImage_small() != null) {
+                            Intent intent = new Intent(mContext, FullScreenActivity.class);
+                            intent.putExtra(Intent.EXTRA_TEXT, image);
+                            if (intent.resolveActivity(mContext.getPackageManager()) != null) {
+                                mContext.startActivity(intent);
+                            }
+                        } else { //if the items have no link, a toast message is displayed
+                            Toast.makeText(mContext, mContext.getString(R.string.not_available), Toast.LENGTH_SHORT).show();
+                        }
+                        break;
+                    case R.id.photo_download:
+                        if (isConnected()) {
+                            if (currentItem.getImage_raw() != null) {
+                                Toast.makeText(mContext, mContext.getString(R.string.saving_image), Toast.LENGTH_LONG).show();
+                                Glide.with(mContext).load(image).asBitmap().into(new SimpleTarget<Bitmap>() {
+                                    @Override
+                                    public void onResourceReady(Bitmap resource, GlideAnimation glideAnimation) {
+                                        saveImage(resource, currentItem.getID());
+                                    }
+                                });
+                            } else {//if the items have no link, a toast message is displayed
+                                Toast.makeText(mContext, mContext.getString(R.string.not_available), Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            Toast.makeText(mContext, mContext.getString(R.string.no_internet_title), Toast.LENGTH_SHORT).show();
+                        }
+                        break;
+                    case R.id.like:
+                        Toast.makeText(mContext, mContext.getString(R.string.out_of_oder), Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                return false;
+            }
+        });
+
+        // Force icons to show
+        Object menuObject;
+        Class[] argTypes;
+        try {
+            Field fMenuHelper = PopupMenu.class.getDeclaredField("mPopup");
+            fMenuHelper.setAccessible(true);
+            menuObject = fMenuHelper.get(popup);
+            argTypes = new Class[] { boolean.class };
+            menuObject.getClass().getDeclaredMethod("setForceShowIcon", argTypes).invoke(menuObject, true);
+        } catch (Exception e) {
+            // These exceptions should never happen, but in the case it log the error and show the menu normally.
+            Log.w(LOG_TAG + " -> PopupMenu", "Error showing menu icons", e);
+            popup.show();
+            return;
+        }
+        //displaying the popup
+        popup.show();
+        // Try to force some horizontal offset
+        try {
+            Field fListPopup = menuObject.getClass().getDeclaredField("mPopup");
+            fListPopup.setAccessible(true);
+            Object listPopup = fListPopup.get(menuObject);
+            argTypes = new Class[] { int.class };
+            Class listPopupClass = listPopup.getClass();
+            // Get the width of the popup window
+            int width = (Integer) listPopupClass.getDeclaredMethod("getWidth").invoke(listPopup);
+            // Invoke setHorizontalOffset() with the negative width to move left by that distance
+            listPopupClass.getDeclaredMethod("setHorizontalOffset", argTypes).invoke(listPopup, -width + 70);
+            // Invoke show() to update the window's position
+            listPopupClass.getDeclaredMethod("show").invoke(listPopup);
+        } catch (Exception e) {
+            // These exceptions should never happen, but in the case it log the error and show the menu normally.
+            Log.w(LOG_TAG + " -> PopupMenu", "Unable to force offset", e);
+        }
     }
 
     //for getting the date conversion

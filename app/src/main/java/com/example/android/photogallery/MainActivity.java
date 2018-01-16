@@ -10,12 +10,13 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -50,10 +51,18 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private ImageView mImageEmptyList; //this image is shown the the are no data
     private ProgressBar mLoader; //this loads a circle progress bar as loading bar
     public SharedPreferences sharedPrefs;
+    private String theme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        theme = sharedPrefs.getString(getString(R.string.settings_theme_key), getString(R.string.settings_theme_default));
+        Log.e("MainActivity -> Theme", getTheme().toString());
+        if(theme.equals("light")){
+            setTheme(R.style.AppThemeLight);
+        }else {
+            setTheme(R.style.AppThemeDark);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -154,6 +163,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     public void clear() {
         this.mItems.clear();
+        recyclerView.scrollToPosition(0);
         adapter.notifyDataSetChanged();
     }
 
@@ -253,9 +263,15 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     //build an alert dialog message for no internet connection
     public void alertDialogMessage(String title, String message) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.alertDialog);
+        int style = R.style.alertDialog;
+        int icon = R.drawable.ic_wifi_off_white;
+        if(theme.equals("light")){
+            style = R.style.alertDialogLight;
+            icon = R.drawable.ic_wifi_off;
+        }
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, style);
         builder.setTitle(title);
-        builder.setIcon(R.drawable.ic_wifi_off);
+        builder.setIcon(icon);
         builder.setMessage(message);
         builder.setNegativeButton(getString(R.string.close_button), new DialogInterface.OnClickListener() {
             @Override
@@ -280,9 +296,14 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     }
 
     @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         //Refresh the data when preference are changed
-        refresh();
+        if(!key.equals(getString(R.string.settings_theme_key))){
+            refresh();
+        }
+        if(key.equals(getString(R.string.settings_theme_key))){
+            MainActivity.this.recreate();
+        }
     }
 
     @Override
