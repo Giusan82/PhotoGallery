@@ -31,7 +31,7 @@ public class FullScreenActivity extends AppCompatActivity {
     private ProgressBar mLoader; //this loads a circle progress bar as loading bar
     private String mImageUrl;
     private RelativeLayout mParent;
-    public SharedPreferences sharedPrefs;
+    private SharedPreferences sharedPrefs;
     private String theme;
 
     @Override

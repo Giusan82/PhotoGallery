@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private TextView mEmptyListMessage; //this text is shown the the are no data
     private ImageView mImageEmptyList; //this image is shown the the are no data
     private ProgressBar mLoader; //this loads a circle progress bar as loading bar
-    public SharedPreferences sharedPrefs;
+    private SharedPreferences sharedPrefs;
     private String theme;
 
     @Override
