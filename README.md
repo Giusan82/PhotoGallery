@@ -22,7 +22,7 @@ for allowing to try it.</p>
 <p align="center">
   <img src="2018-01-16_02.28.01.151.png" height="450" style="max-width:100%;">
   <img src="2018-01-16_02.13.51.315.png" height="450" style="max-width:100%;">
-  <img src="2017-12-21_224958.jpg" height="450" style="max-width:100%;">
+  <img src="2018-01-16_02.32.11.647.png" height="450" style="max-width:100%;">
 </p>
 <p>Here an example of a zooming Android ImageView:</p>
 <p align="center">
