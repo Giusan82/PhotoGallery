@@ -5,6 +5,12 @@
         android:layout="@layout/preferences_category"
         android:title="@string/category_general">
         <ListPreference
+            android:defaultValue="@string/settings_theme_default"
+            android:entries="@array/settings_theme_labels"
+            android:entryValues="@array/settings_theme_values"
+            android:key="@string/settings_theme_key"
+            android:title="@string/settings_theme_label" />
+        <ListPreference
             android:defaultValue="@string/settings_order_by_default"
             android:entries="@array/settings_order_by_labels"
             android:entryValues="@array/settings_order_by_values"
@@ -33,15 +39,5 @@
             android:summaryOff="@string/checkbox_summary_off"
             android:summaryOn="@string/checkbox_summary_on"
             android:title="@string/settings_featured_label" />
-    </PreferenceCategory>
-    <PreferenceCategory
-        android:layout="@layout/preferences_category"
-        android:title="@string/category_style">
-        <ListPreference
-            android:defaultValue="@string/settings_theme_default"
-            android:entries="@array/settings_theme_labels"
-            android:entryValues="@array/settings_theme_values"
-            android:key="@string/settings_theme_key"
-            android:title="@string/settings_theme_label" />
     </PreferenceCategory>
 </PreferenceScreen>

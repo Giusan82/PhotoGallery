@@ -33,9 +33,9 @@
     <string name="saving_image">Saving...</string>
 
     <!-- Settings Menu Item [CHAR LIMIT=NONE] -->
-    <string name="settings_search">Settings</string>
+    <string name="settings_menu">Settings</string>
     <!-- Settings Activity Title [CHAR LIMIT=NONE] -->
-    <string name="settings_title">Advanced Search</string>
+    <string name="settings_title">Settings</string>
     <!-- Strings For Max Results Preference [CHAR LIMIT=NONE] -->
     <string name="settings_max_results_label">Max Results</string>
     <string name="settings_max_results_key" translatable="false">max_results</string>
@@ -86,7 +86,6 @@
     <!--Category settings [CHAR LIMIT=NONE]-->
     <string name="category_general">General</string>
     <string name="category_formats">Formats</string>
-    <string name="category_style">Style</string>
 
     <!-- Strings For theme Preference [CHAR LIMIT=NONE] -->
     <string name="settings_theme_label">Theme</string>

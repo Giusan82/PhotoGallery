@@ -19,7 +19,7 @@
                 android:id="@+id/action_settings"
                 android:icon="?attr/settings_icon"
                 android:orderInCategory="1"
-                android:title="@string/settings_search"
+                android:title="@string/settings_menu"
                 app:showAsAction="never" />
         </menu>
     </item>
