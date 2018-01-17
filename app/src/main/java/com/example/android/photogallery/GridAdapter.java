@@ -8,13 +8,14 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Environment;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -104,6 +105,7 @@ public class GridAdapter extends RecyclerView.Adapter<ItemsViewHolder> {
         PopupMenu popup = new PopupMenu(mContext, holder.itemPopupMenu);
         //inflating menu from xml resource
         popup.inflate(R.menu.overflow_menu);
+        popup.setGravity(Gravity.END);
         //adding click listener
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
@@ -148,14 +150,12 @@ public class GridAdapter extends RecyclerView.Adapter<ItemsViewHolder> {
 
         // Force icons on popup menu
         Object menuObject;
-        Class[] classes;
         try {
-            Field field = PopupMenu.class.getDeclaredField("mPopup");
-            field.setAccessible(true);
-            menuObject = field.get(popup);
-            classes = new Class[]{boolean.class};
-            menuObject.getClass().getDeclaredMethod("setForceShowIcon", classes).invoke(menuObject, true);
-        } catch (Exception e) {
+            Field mField = PopupMenu.class.getDeclaredField("mPopup");
+            mField.setAccessible(true);
+            menuObject = mField.get(popup);
+            menuObject.getClass().getDeclaredMethod("setForceShowIcon", new Class[] { boolean.class }).invoke(menuObject, true);
+        }catch (Exception e){
             // These exceptions should never happen, but in the case it log the error and show the menu normally.
             Log.w(LOG_TAG + " -> PopupMenu", "Error showing menu icons", e);
             popup.show();
@@ -163,22 +163,6 @@ public class GridAdapter extends RecyclerView.Adapter<ItemsViewHolder> {
         }
         //displaying the popup
         popup.show();
-        // Force an horizontal offset of popup menu
-        try {
-            Field field = menuObject.getClass().getDeclaredField("mPopup");
-            field.setAccessible(true);
-            menuObject = field.get(menuObject);
-            classes = new Class[]{int.class};
-            // Get the width of the popup window
-            int width = (Integer) menuObject.getClass().getDeclaredMethod("getWidth").invoke(menuObject);
-            // Invoke setHorizontalOffset() with the negative width to move left by that distance
-            menuObject.getClass().getDeclaredMethod("setHorizontalOffset", classes).invoke(menuObject, -width + 70);
-            // Invoke show() to update the window's position
-            menuObject.getClass().getDeclaredMethod("show").invoke(menuObject);
-        } catch (Exception e) {
-            // These exceptions should never happen, but in the case it log the error and show the menu normally.
-            Log.w(LOG_TAG + " -> PopupMenu", "Error forcing offset", e);
-        }
     }
 
     //for getting the date conversion
