@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     protected void onCreate(Bundle savedInstanceState) {
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         theme = sharedPrefs.getString(getString(R.string.settings_theme_key), getString(R.string.settings_theme_default));
-        if (theme.equals("light")) {
+        if (theme.equals(getString(R.string.settings_lightTheme_value))) {
             setTheme(R.style.AppThemeLight);
         } else {
             setTheme(R.style.AppThemeDark);
