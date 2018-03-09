@@ -263,7 +263,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public void alertDialogMessage(String title, String message) {
         int style = R.style.alertDialog;
         int icon = R.drawable.ic_wifi_off_white;
-        if (theme.equals("light")) {
+        if (theme.equals(getString(R.string.settings_lightTheme_value))) {
             style = R.style.alertDialogLight;
             icon = R.drawable.ic_wifi_off;
         }
