@@ -113,7 +113,7 @@ public class GridAdapter extends RecyclerView.Adapter<ItemsViewHolder> {
                 switch (item.getItemId()) {
                     case R.id.photo_zoom:
                         //this open tha FullScreenActivity
-                        if (currentItem.getImage_small() != null) {
+                        if (image != null) {
                             Intent intent = new Intent(mContext, FullScreenActivity.class);
                             intent.putExtra(Intent.EXTRA_TEXT, image);
                             if (intent.resolveActivity(mContext.getPackageManager()) != null) {
@@ -125,7 +125,7 @@ public class GridAdapter extends RecyclerView.Adapter<ItemsViewHolder> {
                         break;
                     case R.id.photo_download:
                         if (isConnected()) {
-                            if (currentItem.getImage_raw() != null) {
+                            if (image != null) {
                                 Toast.makeText(mContext, mContext.getString(R.string.saving_image), Toast.LENGTH_LONG).show();
                                 Glide.with(mContext).load(image).asBitmap().into(new SimpleTarget<Bitmap>() {
                                     @Override
